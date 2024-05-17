@@ -76,14 +76,15 @@ namespace Курсовая
                 )
             {
                 MessageBox.Show(
-                    "Все обязательные поля должны быть заполненны.\nЕсли у вас нет данных для некоторых из низ укажите 0",
+                    "Все обязательные поля должны быть заполненны.\n" +
+                    "Если у вас нет данных для некоторых из низ укажите 0",
                     "Сообщение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.DefaultDesktopOnly
                 );
-            } 
+            }
             else
             {
                 double additionally = 0.0;
@@ -104,7 +105,7 @@ namespace Курсовая
                 dataGridView1.Rows[0].Cells[5].Value = textBox11.Text; // Колличество
                 dataGridView1.Rows[0].Cells[6].Value = textBox4.Text; // Коэффициент
                 dataGridView1.Rows[0].Cells[7].Value = textBox7.Text; // Материалы
-                dataGridView1.Rows[0].Cells[0].Value = ((work+work_weight+order+rate)*count+material+additionally).ToString();
+                dataGridView1.Rows[0].Cells[0].Value = ((work + work_weight + order + rate) * count + material + additionally).ToString();
             }
         }
 
@@ -199,8 +200,6 @@ namespace Курсовая
                 e.Handled = true;
                 return;
             }
-
-            // checks to make sure only 1 decimal is allowed
             if (e.KeyChar == 46)
             {
                 if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
@@ -294,6 +293,43 @@ namespace Курсовая
                 if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
                     e.Handled = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[0].Cells[1].Value = "";
+            dataGridView1.Rows[0].Cells[2].Value = "";
+            dataGridView1.Rows[0].Cells[3].Value = "";
+            dataGridView1.Rows[0].Cells[4].Value = "";
+            dataGridView1.Rows[0].Cells[5].Value = "";
+            dataGridView1.Rows[0].Cells[6].Value = "";
+            dataGridView1.Rows[0].Cells[7].Value = "";
+            dataGridView1.Rows[0].Cells[0].Value = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[0].Cells[1].Value = "";
+            dataGridView1.Rows[0].Cells[2].Value = "";
+            dataGridView1.Rows[0].Cells[3].Value = "";
+            dataGridView1.Rows[0].Cells[4].Value = "";
+            dataGridView1.Rows[0].Cells[5].Value = "";
+            dataGridView1.Rows[0].Cells[6].Value = "";
+            dataGridView1.Rows[0].Cells[7].Value = "";
+            dataGridView1.Rows[0].Cells[0].Value = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox12.Text = "";
+            listBox1.Items.Clear();
+            listBox1.Items.Add("Пока тут пусто, начните добовлять элементы");
         }
     }
 }

@@ -78,6 +78,8 @@ namespace Курсовая
             Количество = new DataGridViewTextBoxColumn();
             Коэффициент = new DataGridViewTextBoxColumn();
             Материалы = new DataGridViewTextBoxColumn();
+            button3 = new Button();
+            button4 = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -467,7 +469,16 @@ namespace Курсовая
             // 
             dataGridView1.BackgroundColor = SystemColors.ActiveCaptionText;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Итого, Работа, Трудоемкость, Заказ, Дополнительные, Количество, Коэффициент, Материалы });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] {
+                Итого,
+                Работа,
+                Трудоемкость,
+                Заказ,
+                Дополнительные,
+                Количество,
+                Коэффициент,
+                Материалы
+            });
             dataGridView1.Location = new Point(433, 463);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -541,12 +552,40 @@ namespace Курсовая
             Материалы.ReadOnly = true;
             Материалы.Width = 125;
             // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ActiveCaptionText;
+            button3.Font = new Font("JetBrains Mono SemiBold", 9F, FontStyle.Bold);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(912, 269);
+            button3.Name = "button3";
+            button3.Size = new Size(116, 62);
+            button3.TabIndex = 37;
+            button3.Text = "очистить смету";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ActiveCaptionText;
+            button4.Font = new Font("JetBrains Mono SemiBold", 9F, FontStyle.Bold);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(1028, 269);
+            button4.Name = "button4";
+            button4.Size = new Size(116, 62);
+            button4.TabIndex = 38;
+            button4.Text = "очистить все";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(1158, 583);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(button2);
@@ -574,7 +613,7 @@ namespace Курсовая
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Расчет стоимости мебели";
+            Text = "Мебельщик";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -646,5 +685,7 @@ namespace Курсовая
         private DataGridViewTextBoxColumn Количество;
         private DataGridViewTextBoxColumn Коэффициент;
         private DataGridViewTextBoxColumn Материалы;
+        private Button button3;
+        private Button button4;
     }
 }
